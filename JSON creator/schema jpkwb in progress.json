@@ -1,0 +1,139 @@
+{
+	Tables: [
+		{
+			TableName: "JPK_AccountStatements",
+			PrimaryKey: [
+				{ ColumnName: "Id", Ordinal: 0, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false }
+			],
+			Columns: [
+				{ ColumnName: "TransactionDate", Ordinal: 1, Type: "datetime", Mandatory: true, IsDefaultNaturalKey: false },
+				{ ColumnName: "TransactionNumber", Ordinal: 2, Type: "text", Length: {JAK ZROBIC MAXA?}, Mandatory: false, IsDefaultNaturalKey: true },
+				{ ColumnName: "ReferenceNumber", Ordinal: 3, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: true },
+				{ ColumnName: "DocumentHeader", Ordinal: 4, Type: "text", Length:500, Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "DocumentDate", Ordinal: 5, Type: "datetime", Mandatory: true, IsDefaultNaturalKey: false },
+				{ ColumnName: "PostingDate", Ordinal: 6, Type: "datetime", Mandatory: true, IsDefaultNaturalKey: false },
+				{ ColumnName: "ReceiptDate", Ordinal: 7, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "PaymentDate", Ordinal: 8, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "TransactionType", Ordinal: 9, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "ShipmentCountryId", Ordinal: 10, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ContractorId", Ordinal: 11, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ChainPrimaryId", Ordinal: 12, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "ChainId", Ordinal: 13, Type: "guid", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "IsDeleted", Ordinal: 14, Type: "boolean", Mandatory: true, IsDefaultNaturalKey: false },				
+				{ ColumnName: "ImportExecutionId", Ordinal: 15, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "SourceDocumentNumber", Ordinal: 16, Type: "text", Length: 500, Mandatory: true, IsDefaultNaturalKey: false },				
+				{ ColumnName: "DeliveryDate", Ordinal: 17, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ReceiptDateInSales", Ordinal: 18, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "PaymentDueDate", Ordinal:19, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "HasAttachmentId", Ordinal: 20, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "SourceSystemAccountant", Ordinal: 21, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false }
+			]
+		},
+		{
+			TableName: "VAT_InvoiceEntries",
+			PrimaryKey: [
+				{ ColumnName: "Id", Ordinal: 0, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false }
+			],
+			Columns: [
+				{ ColumnName: "GrossAmount", Ordinal: 1, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "NetAmount", Ordinal: 2, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "VatAmount", Ordinal: 3, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "TaxAccountNumber", Ordinal: 4, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "VatDate", Ordinal: 5, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "Comment", Ordinal: 6, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "TransactionDescription", Ordinal: 7, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },										
+				{ ColumnName: "TaxCodeId", Ordinal: 8, Type: "guid", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ChainId", Ordinal: 9, Type: "guid", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "InvoiceId", Ordinal: 10, Type: "integer", Mandatory: false, IsDefaultNaturalKey: true },
+				{ ColumnName: "IsDeleted", Ordinal: 11, Type: "boolean", Mandatory: true, IsDefaultNaturalKey: false },
+				{ ColumnName: "CorrectionEntry_Id", Ordinal: 12, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "NetForeignAmount", Ordinal: 13, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "VatForeignAmount", Ordinal: 14, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "GrossForeignAmount", Ordinal: 15, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "ExchangeRateId", Ordinal: 16, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "BankExchangeRateId", Ordinal: 17, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },				
+				{ ColumnName: "IsAddedManually", Ordinal: 18, Type: "boolean", Mandatory: true, IsDefaultNaturalKey: false },				
+				{ ColumnName: "EvidenceValidation", Ordinal: 19, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ImportValidation", Ordinal: 20, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ImportComment", Ordinal: 21, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "LastModificationId", Ordinal: 22, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "Status", Ordinal: 23, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "CustomStatus", Ordinal: 24, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "Incoterms", Ordinal: 25, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualDate1", Ordinal: 26, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualDate2", Ordinal: 27, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualText1", Ordinal: 28, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualText2", Ordinal: 29, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualText3", Ordinal: 30, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualNumber1", Ordinal: 31, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "ManualNumber2", Ordinal: 32, Type: "decimal", Scale: 2, Precision: 18, Mandatory: false, IsDefaultNaturalKey: false }				
+			]
+		},
+		{
+			TableName: "VAT_Contractors",
+			PrimaryKey: [
+				{ ColumnName: "Id", Ordinal: 0, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false }
+			],
+			Columns: [
+				{ ColumnName: "Name", Ordinal: 1, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "VatNumber", Ordinal: 2, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: true },
+				{ ColumnName: "AccountNumber", Ordinal: 3, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "CountryId", Ordinal: 4, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "City", Ordinal: 5, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "PostalCode", Ordinal: 6, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "Street", Ordinal: 7, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "BuildingNumber", Ordinal: 8, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "FlatNumber", Ordinal: 9, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "IsDeleted", Ordinal: 10, Type: "boolean", Mandatory: true, IsDefaultNaturalKey: false },
+				{ ColumnName: "FinancialSystemId", Ordinal: 11, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false }
+			]
+		},
+		{
+			TableName: "VAT_TaxCodes",
+			PrimaryKey: [
+				{ ColumnName: "Id", Ordinal: 0, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false }
+			],
+			Columns: [
+				{ ColumnName: "Name", Ordinal: 1, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false }
+			]
+		},
+		{
+			TableName: "CMN_ImportExecutions",
+			PrimaryKey: [
+				{ ColumnName: "Id", Ordinal: 0, Type: "integer", Mandatory: false, IsDefaultNaturalKey: false }
+			],
+			Columns: [
+				{ ColumnName: "ImportId", Ordinal: 1, Type: "guid", Mandatory: false, IsDefaultNaturalKey: true },
+				{ ColumnName: "StartDate", Ordinal: 2, Type: "datetime", Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "UserName", Ordinal: 3, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+				{ ColumnName: "Name", Ordinal: 4, Type: "text", Length: 500, Mandatory: false, IsDefaultNaturalKey: false },
+			]
+		}
+	],
+	Relations: [
+		{
+			ForeignKeyName: "FK_dbo.VAT_Invoices_dbo.CMN_Contractors_ContractorId",
+			ForeignKeyTableName: "VAT_Invoices",
+			PrimaryKeyTableName:  "VAT_Contractors",
+			ForeignKeys: [{ PrimaryKeyName: "Id", ForeignKeyName: "ContractorId" }]
+		}, 
+		{
+			ForeignKeyName: "FK_dbo.VAT_Invoices_dbo.CMN_ImportExecutions_ImportExecutionId",
+			ForeignKeyTableName: "VAT_Invoices",
+			PrimaryKeyTableName:  "CMN_ImportExecutions",
+			ForeignKeys: [{ PrimaryKeyName: "Id", ForeignKeyName: "ImportExecutionId" }]
+		}, 
+		{
+			ForeignKeyName: "FK_dbo.VAT_InvoiceEntries_dbo.VAT_Invoices_InvoiceId",
+			ForeignKeyTableName: "VAT_InvoiceEntries",
+			PrimaryKeyTableName:  "VAT_Invoices",
+			ForeignKeys: [{ PrimaryKeyName: "Id", ForeignKeyName: "InvoiceId" }]
+		}, 
+		{
+			ForeignKeyName: "FK_dbo.VAT_InvoiceEntries_dbo.VAT_TaxCodes_VatCodeId",
+			ForeignKeyTableName: "VAT_InvoiceEntries",
+			PrimaryKeyTableName:  "VAT_TaxCodes",
+			ForeignKeys: [{ PrimaryKeyName: "Id", ForeignKeyName: "TaxCodeId" }]
+		}
+	]
+}

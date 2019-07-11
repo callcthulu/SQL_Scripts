@@ -1,0 +1,40 @@
+{
+	"Tables": [
+		{
+			"TableName": "JPK_AccountStatements",
+			"PrimaryKey": [
+				{ "ColumnName": "Id", "Ordinal": 0, "Type": "integer", "Mandatory": true, "IsDefaultNaturalKey": false }
+			],
+			"Columns": [
+				{ "ColumnName": "TransactionDate", "Ordinal": 1, "Type": "datetime", "Mandatory": true, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "TransactionNumber", "Ordinal": 2, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": true },
+				{ "ColumnName": "TransactionId", "Ordinal": 3, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "EntityName", "Ordinal": 4, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },				
+				{ "ColumnName": "Description", "Ordinal": 5, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "Amount", "Ordinal": 6, "Type": "decimal", "Scale": 2, "Precision": 18, "Mandatory": true, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "AccountBalance", "Ordinal": 7, "Type": "decimal", "Scale": 2, "Precision": 18, "Mandatory": true, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "AccountNumber", "Ordinal": 8, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": true },				
+				{ "ColumnName": "DataSource", "Ordinal": 9, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },				
+				{ "ColumnName": "_startDate", "Ordinal": 10, "Type": "datetime", "Mandatory": true, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "_createdby", "Ordinal": 11, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "_deleted", "Ordinal": 12, "Type": "boolean", "Mandatory": true, "IsDefaultNaturalKey": false }			
+			]
+		},
+		{
+			"TableName": "JPK_BankAccounts",
+			"PrimaryKey": [
+				{ "ColumnName": "Id", "Ordinal": 0, "Type": "integer", "Mandatory": true, "IsDefaultNaturalKey": false }
+			],
+			"Columns": [
+				{ "ColumnName": "Number", "Ordinal": 1, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": true },
+				{ "ColumnName": "CurrencyCode", "Ordinal": 2, "Type": "text", "Length": 3, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "DataSource", "Ordinal": 3, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "_startDate", "Ordinal": 4, "Type": "datetime", "Mandatory": true, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "_createdby", "Ordinal": 5, "Type": "text", "Length": 4000, "Mandatory": false, "IsDefaultNaturalKey": false },
+				{ "ColumnName": "_deleted", "Ordinal": 6, "Type": "boolean", "Mandatory": true, "IsDefaultNaturalKey": false }
+			]
+		}
+	],
+	"Relations": [
+	]
+}
