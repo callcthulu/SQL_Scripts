@@ -2,9 +2,9 @@
 v 0.13 08.01
 */
 --paste catalog name below:
-USE
-[42cc123c-8e9d-4df3-ba3e-54b3324d95a5]
-GO
+--USE
+--[42cc123c-8e9d-4df3-ba3e-54b3324d95a5]
+--GO
 
 DECLARE @collationa nvarchar(256)
 --paste correct collation below as value of variable:
